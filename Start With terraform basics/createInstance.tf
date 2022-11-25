@@ -1,5 +1,10 @@
 
 resource "aws_instance" "MyFirstInstance" {
-    ami = "ami-0b0ea68c435eb488d"
-    instance_type = "t2.micro"
+    count           = 3
+    ami             = "ami-0b0ea68c435eb488d"
+    instance_type   = "t2.micro"
+
+    tags{
+        Name        = "threedemoInstance"
+    }
 }
