@@ -1,4 +1,4 @@
-data "aws_availability_zone "available" {} 
+data "aws_availability_zones" "avilable" {}
 
 resource "aws_instance" "MyFirstInstance" {
     ami             = lookup(var.AMIS, var.AWS_REGION)
