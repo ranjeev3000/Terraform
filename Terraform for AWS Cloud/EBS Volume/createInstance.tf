@@ -19,9 +19,9 @@ resource "aws_instance" "MyFirstInstance" {
 # EBS Resource Creation
 
 resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = "us-west-2a"
+  availability_zone = "us-east-2a"
   size              = 40
-  type = "ec2"
+  type = "gp2"
 
   tags = {
     Name = "HelloWorld"
