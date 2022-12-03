@@ -18,21 +18,6 @@ resource "aws_instance" "MyFirstInstance" {
 
 }
 
-# EBS Resource Creation
-
-resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = "us-east-2a"
-  size              = 40
-  type = "gp2"
-
-  tags = {
-    Name = "HelloWorld"
-  }
-}
-
-# Attach EWS Volume with AWS Instance
-resource "aws_volume_attachment" "ebs-volume-1-attachment" {
-  device_name = "/dev/xvdh"
-  volume_id   = aws_ebs_volume.ebs-volume-1.id
-  instance_id = aws_instance.MyFirstInstance.id
+output "public_ip" {
+  value = aws_instance.MyFirstInstance.public_ip
 }
