@@ -13,7 +13,7 @@ resource "aws_db_parameter_group" "levelup-mariadb-parameters" {
   description = "MAriaDB Parameter Group"
 
   parameter {
-    name  = "max_allowed_content"
+    name  = "max_allowed_packet"
     value = "16777216"
   }
 
